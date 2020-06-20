@@ -3,37 +3,39 @@ import database from '../database/database';
 
 class User extends Sequelize.Model {
   public id!: number;
-
-  public firstName!: string;
-
+  public name!: string;
   public lastName!: string;
-
-  public teacherUser!: boolean;
-
-  public country!: string;
-
-  public language!: string;
-
-  public proUser!: boolean;
-
-  public password!: string;
-
-  public passwordHash!: string;
-
-  public username!: string;
-
+  public cpf!: string;
+  public birthDate!: string;
   public email!: string;
-
-  public readonly createdAt!: Date;
-
-  public readonly updatedAt!: Date;
+  public phone!: string;
 }
 
 User.init(
   {
-    firstName: {
+    name: {
       type: Sequelize.STRING,
-      field: 'first_name'
+      field: 'name'
+    },
+    lastName: {
+      type: Sequelize.STRING,
+      field: 'lastName'
+    },
+    cpf: {
+      type: Sequelize.STRING,
+      field: 'cpf'
+    },
+    birth_date: {
+      type: Sequelize.STRING,
+      field: 'birth_date'
+    },
+    email: {
+      type: Sequelize.STRING,
+      field: 'email'
+    },
+    phone: {
+      type: Sequelize.STRING,
+      field: 'phone'
     },
   },
   {
