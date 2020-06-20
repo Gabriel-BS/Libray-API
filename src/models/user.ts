@@ -41,7 +41,9 @@ User.init(
   {
     sequelize: database.connection,
     freezeTableName: true,
+    schema: 'library',
+    tableName: 'user'
   }
-);
+)
 
 export default User;

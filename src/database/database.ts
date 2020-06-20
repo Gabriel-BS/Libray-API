@@ -8,8 +8,9 @@ class Database {
     this.init();
   }
 
-  init(): void {
+  async init(): Promise<void> {
     this.connection = new Sequelize.Sequelize(databaseConfig);
+    await this.connection.createSchema('library', {}).catch(() => null)
   }
 }
 
