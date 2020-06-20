@@ -18,10 +18,15 @@
   },
   "homepage": "https://github.com/Gabriel-BS/Libray-API#readme",
   "dependencies": {
-    "@types/restify": "^8.4.2",
-    "restify": "^8.5.1"
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "restify": "^8.5.1",
+    "sequelize": "^5.21.13"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.32",
+    "@types/restify": "^8.4.2",
+    "@types/validator": "^13.0.0",
     "tsc-watch": "^4.2.8",
     "typescript": "^3.9.5"
   }
