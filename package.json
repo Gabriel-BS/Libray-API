@@ -1,0 +1,23 @@
+{
+  "name": "libray-api",
+  "version": "1.0.0",
+  "description": "Projeto de biblioteca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-BS/Libray-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-BS/Libray-API/issues"
+  },
+  "homepage": "https://github.com/Gabriel-BS/Libray-API#readme",
+  "dependencies": {
+    "@types/restify": "^8.4.2",
+    "restify": "^8.5.1"
+  }
+}
