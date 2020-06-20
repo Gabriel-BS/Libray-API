@@ -2,9 +2,10 @@
   "name": "libray-api",
   "version": "1.0.0",
   "description": "Projeto de biblioteca",
-  "main": "index.js",
+  "main": "./dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\""
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "dependencies": {
     "@types/restify": "^8.4.2",
     "restify": "^8.5.1"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.8",
+    "typescript": "^3.9.5"
   }
 }
