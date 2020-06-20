@@ -6,18 +6,6 @@ const serverOptions: ServerOptions = {
     version: "1.0.0" 
 };
 
-const postgresConnOptions: Options = {
-    dialect: 'postgres',
-    host: '34.70.44.42',
-    port: 5432,
-    username: 'postgres',
-    password: 'password',
-    database: 'postgres'
-}
-
-const sequelize = new Sequelize(postgresConnOptions)
-
-
 const server = createServer(serverOptions);
 
 server.listen(3000, () => {
