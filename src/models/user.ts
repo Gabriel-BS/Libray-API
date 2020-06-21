@@ -13,6 +13,11 @@ class User extends Sequelize.Model {
 
 User.init(
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: Sequelize.STRING,
       field: 'name'
@@ -23,10 +28,11 @@ User.init(
     },
     cpf: {
       type: Sequelize.STRING,
-      field: 'cpf'
+      field: 'cpf',
+      unique: true
     },
     birth_date: {
-      type: Sequelize.STRING,
+      type: Sequelize.DATE,
       field: 'birth_date'
     },
     email: {

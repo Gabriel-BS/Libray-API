@@ -9,8 +9,15 @@ class Database {
   }
 
   async init(): Promise<void> {
+    //create a connection to database
     this.connection = new Sequelize.Sequelize(databaseConfig);
-    await this.connection.createSchema('library', {}).catch(() => null)
+    
+    //check if schema existe
+    const schema = await this.connection.showAllSchemas({}) as []
+
+    if(!(schema.find((value) => (value === 'library')))){
+      this.connection.createSchema('libray', {})
+    }
   }
 }
 
