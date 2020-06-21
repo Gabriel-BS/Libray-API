@@ -1,0 +1,10 @@
+{
+  "compilerOptions": { //Todas as opções do typescript
+    "target": "es2020",
+    "module": "CommonJS",
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src"] 
+}

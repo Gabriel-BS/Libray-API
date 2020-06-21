@@ -1,0 +1,33 @@
+{
+  "name": "libray-api",
+  "version": "1.0.0",
+  "description": "Projeto de biblioteca",
+  "main": "./dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:watch": "tsc-watch --target es2017 --outDir ./dist --onSuccess \"node .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-BS/Libray-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-BS/Libray-API/issues"
+  },
+  "homepage": "https://github.com/Gabriel-BS/Libray-API#readme",
+  "dependencies": {
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "restify": "^8.5.1",
+    "sequelize": "^5.21.13"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.32",
+    "@types/restify": "^8.4.2",
+    "@types/validator": "^13.0.0",
+    "tsc-watch": "^4.2.8",
+    "typescript": "^3.9.5"
+  }
+}
