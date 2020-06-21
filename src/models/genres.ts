@@ -8,6 +8,11 @@ class Genre extends Sequelize.Model {
 
 Genre.init(
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: Sequelize.STRING,
       field: 'name'
@@ -21,4 +26,4 @@ Genre.init(
   }
 )
 
-export default Gnere;
+export default Genre;
