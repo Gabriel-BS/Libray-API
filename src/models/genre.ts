@@ -21,4 +21,4 @@ Genre.init(
   }
 )
 
-export default Gnere;
+export default Genre;

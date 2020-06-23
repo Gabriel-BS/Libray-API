@@ -16,7 +16,7 @@ class Database {
     const schema = await this.connection.showAllSchemas({}) as []
 
     if(!(schema.find((value) => (value === 'library')))){
-      this.connection.createSchema('libray', {})
+      this.connection.createSchema('library', {})
     }
   }
 }
