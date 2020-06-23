@@ -9,8 +9,8 @@ class User extends Sequelize.Model {
   public birthDate!: string;
   public email!: string;
   public phone!: string;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public createdAt?: Date;
+  public updatedAt?: Date;
 }
 
 User.init(

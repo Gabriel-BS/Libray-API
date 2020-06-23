@@ -6,8 +6,8 @@ import Writer from './writer';
 class Book extends Sequelize.Model {
   public id!: number;
   public name!: string;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public createdAt?: Date;
+  public updatedAt?: Date;
 }
 
 Book.init(

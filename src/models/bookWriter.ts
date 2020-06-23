@@ -6,8 +6,8 @@ import Writer from './writer';
 class BookWriter extends Sequelize.Model {
   public id!: number;
   public name!: string;
-  public createdAt!: Date;
-  public updatedAt!: Date;
+  public createdAt?: Date;
+  public updatedAt?: Date;
 }
 
 BookWriter.init(
@@ -17,10 +17,6 @@ BookWriter.init(
       autoIncrement: true,
       primaryKey: true
     },
-    name: {
-      type: Sequelize.STRING,
-      field: 'name'
-    }
   },
   {
     sequelize: database.connection,
