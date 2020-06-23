@@ -1,35 +1,38 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
+import Book from './book';
+import User from './user';
 
-class borrow extends Sequelize.Model {
+class Borrow extends Sequelize.Model {
     public id!: number;
     public name!: string;
+    public createdAt?: Date;
+    public updatedAt?: Date;
 }
 
-borrow.init(
+Borrow.init(
     {
-        id: {
-            type: Sequelize.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        book_id: {
-            type: Sequelize.INTEGER,
-            field: 'book_id'
-        },
-        user_id: {
-            type: Sequelize.INTEGER,
-            field: 'genre_id'
-        }
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+      },
     },
-
     {
-        sequelize: database.connection,
-        freezeTableName: true,
-        schema: 'library',
-        tableName: 'borrow'
-    },
-
-
-)
+      sequelize: database.connection,
+      freezeTableName: true,
+      schema: 'library',
+      tableName: 'writer'
+    }
+  )
+  
+  Borrow.belongsTo(Book, {
+      foreignKey: 'book_id',
+      keyType: Sequelize.INTEGER
+  })
+  
+  Borrow.belongsTo(User, {
+      foreignKey: 'user_id',
+      keyType: Sequelize.INTEGER
+  })
 export default borrow;
