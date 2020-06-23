@@ -8,6 +8,11 @@ class borrow extends Sequelize.Model {
 
 borrow.init(
     {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
         book_id: {
             type: Sequelize.INTEGER,
             field: 'book_id'
