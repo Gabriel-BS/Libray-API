@@ -1,16 +1,14 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
-import BookWriter from './writer';
-import Writer from './writer';
 
-class Book extends Sequelize.Model {
+class Genre extends Sequelize.Model {
   public id!: number;
   public name!: string;
   public createdAt!: Date;
   public updatedAt!: Date;
 }
 
-Book.init(
+Genre.init(
   {
     id: {
       type: Sequelize.INTEGER,
@@ -26,15 +24,8 @@ Book.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'book' 
+    tableName: 'genre'
   }
 )
 
-Book.belongsToMany(Writer, {
-  through: 'BookWriter',
-  as: 'writer',
-  foreignKey: 'productId',
-  otherKey: 'orderId'
-});
-
-export default Book;
+export default Genre;

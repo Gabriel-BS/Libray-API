@@ -1,12 +1,14 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
 
-class Genre extends Sequelize.Model {
+class Writer extends Sequelize.Model {
   public id!: number;
   public name!: string;
+  public createdAt!: Date;
+  public updatedAt!: Date;
 }
 
-Genre.init(
+Writer.init(
   {
     id: {
       type: Sequelize.INTEGER,
@@ -22,8 +24,8 @@ Genre.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'genre'
+    tableName: 'writer'
   }
 )
 
-export default Genre;
+export default Writer;
