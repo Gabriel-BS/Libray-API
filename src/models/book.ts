@@ -8,6 +8,11 @@ class Book extends Sequelize.Model {
 
 Book.init(
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: Sequelize.STRING,
       field: 'name'
@@ -17,7 +22,8 @@ Book.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'book'
+    tableName: 'book',
+    
   }
 )
 

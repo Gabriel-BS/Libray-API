@@ -8,6 +8,11 @@ class Writer extends Sequelize.Model {
 
 Writer.init(
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: Sequelize.STRING,
       field: 'name'
