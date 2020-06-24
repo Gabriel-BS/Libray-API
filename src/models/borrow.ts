@@ -1,13 +1,13 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
-import Book from './book';
-import User from './user';
+import { Book } from './book';
+import { User } from './user';
 
-class Borrow extends Sequelize.Model {
+export class Borrow extends Sequelize.Model {
     public id!: number;
     public name!: string;
-    public createdAt?: Date;
-    public updatedAt?: Date;
+    public created_at?: Date;
+    public updated_at?: Date;
 }
 
 Borrow.init(
@@ -22,7 +22,9 @@ Borrow.init(
       sequelize: database.connection,
       freezeTableName: true,
       schema: 'library',
-      tableName: 'writer'
+      tableName: 'borrow',
+      createdAt: 'created_at',
+      updatedAt: 'updated_at'
     }
   )
   
@@ -35,4 +37,3 @@ Borrow.init(
       foreignKey: 'user_id',
       keyType: Sequelize.INTEGER
   })
-export default borrow;

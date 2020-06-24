@@ -1,7 +1,7 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
 
-class User extends Sequelize.Model {
+export class User extends Sequelize.Model {
   public id!: number;
   public name!: string;
   public lastName!: string;
@@ -9,8 +9,8 @@ class User extends Sequelize.Model {
   public birthDate!: string;
   public email!: string;
   public phone!: string;
-  public createdAt?: Date;
-  public updatedAt?: Date;
+  public created_at?: Date;
+  public updated_at?: Date;
 }
 
 User.init(
@@ -50,8 +50,8 @@ User.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'user'
+    tableName: 'user',
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   }
 )
-
-export default User;

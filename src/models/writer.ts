@@ -1,11 +1,11 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
 
-class Writer extends Sequelize.Model {
+export class Writer extends Sequelize.Model {
   public id!: number;
   public name!: string;
-  public createdAt?: Date;
-  public updatedAt?: Date;
+  public created_at?: Date;
+  public updated_at?: Date;
 }
 
 Writer.init(
@@ -24,8 +24,8 @@ Writer.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'writer'
+    tableName: 'writer',
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   }
 )
-
-export default Writer;

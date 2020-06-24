@@ -1,13 +1,13 @@
 import * as Sequelize from 'sequelize';
 import database from '../database/database';
-import Book from './book';
-import Genre from './genre';
+import { Book } from './book';
+import { Genre } from './genre';
 
-class BookGenre extends Sequelize.Model {
+export class BookGenre extends Sequelize.Model {
     public id!: number;
     public name!: string;
-    public createdAt?: Date;
-    public updatedAt?: Date;
+    public created_at?: Date;
+    public updated_at?: Date;
 }
 
 BookGenre.init(
@@ -22,7 +22,9 @@ BookGenre.init(
     sequelize: database.connection,
     freezeTableName: true,
     schema: 'library',
-    tableName: 'BookGenre'
+    tableName: 'book_genre',
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   },
 )
 
@@ -37,4 +39,3 @@ BookGenre.belongsTo(Genre, {
     keyType: Sequelize.INTEGER
 });
 
-export default BookGenre;
