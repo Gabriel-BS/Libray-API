@@ -15,8 +15,16 @@ BookGenre.init(
     id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
   },
+    book_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    genre_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    }
 },
   {
     sequelize: database.connection,

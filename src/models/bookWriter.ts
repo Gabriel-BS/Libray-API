@@ -17,6 +17,14 @@ BookWriter.init(
       autoIncrement: true,
       primaryKey: true
     },
+    book_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    },
+    writer_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    }
   },
   {
     sequelize: database.connection,

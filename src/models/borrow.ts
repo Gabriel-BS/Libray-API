@@ -17,6 +17,14 @@ Borrow.init(
         autoIncrement: true,
         primaryKey: true
       },
+      book_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      }
     },
     {
       sequelize: database.connection,
@@ -30,10 +38,10 @@ Borrow.init(
   
   Borrow.belongsTo(Book, {
       foreignKey: 'book_id',
-      keyType: Sequelize.INTEGER
+      keyType: Sequelize.INTEGER,
   })
   
   Borrow.belongsTo(User, {
       foreignKey: 'user_id',
       keyType: Sequelize.INTEGER
-  })
+})
